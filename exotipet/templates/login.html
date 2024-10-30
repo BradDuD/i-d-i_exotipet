@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <title> Exotipet - Veterinaria </title>
+</head>
+
+<body class="section" style="background: linear-gradient(90deg, #b8b5dd, #776BCC);">
+
+    <div class="login-container">
+        <div class="screen">
+            <div class="screen__content">
+                <div class="login__title">
+                    <h1>Log In</h1>
+                </div>
+                <form class="login" action="{{ url_for('main.login') }}" method="POST">
+                    <div class="login__field">
+                        <i class="login__icon ri-user-fill"></i>
+                        <input type="text" class="login__input" placeholder="User name / Email" name="username">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon ri-lock-fill"></i>
+                        <input type="password" class="login__input" placeholder="Password" name="password">
+                    </div>
+                    <button type="submit" class="button login__submit">
+                        <span class="button__text">Log In Now</span>
+                        <i class="button__icon ri-arrow-right-fill"></i>
+                    </button>
+                </form>
+                
+                <div class="social-login">
+                     <a href="{{ url_for('main.register') }}"><h3>Regístrate</h3></a>
+                    <div class="social-icons">
+                        <a href="#" class="social-login__icon fab fa-instagram"></a>
+                        <a href="#" class="social-login__icon fab fa-facebook"></a>
+                        <a href="#" class="social-login__icon fab fa-twitter"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
