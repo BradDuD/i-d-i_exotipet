@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <title> Exotipet - Veterinaria </title>
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                ExotiPet
+            </a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active_link">Home</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#popular" class="nav__link">Popular</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#explore" class="nav__link">Explore</a>
+                    </li>
+
+                    {% if username %}
+                    <li class="nav__item">
+                        <p class="nav__welcome">Bienvenido, {{ username }}</p>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('main.logout') }}" class="nav__link">Cerrar sesión</a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <!-- Toggle button -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <!-- <img src="{{ url_for('static', filename='img/home-bg.jpg') }}" alt="Home image" class="home__bg"> -->
+            <img src="{{ url_for('static', filename='img/reptil-main.jfif') }}" alt="Home image" class="home__bg">
+            <div class="home__shadow-animals"></div>
+
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Pavos
+                    </h1>
+
+                    <h1 class="home__title">
+                        Reales <br>
+                    </h1>
+
+                    <p class="home__description">
+                        El pavo real es una de las aves más fascinantes y coloridas del mundo. Conocidos principalmente
+                        por los machos, que despliegan sus vistosas plumas en forma de abanico, los pavos reales no solo
+                        son un símbolo de belleza y elegancia, sino que también poseen características únicas y
+                        comportamientos interesantes que los hacen animales exóticos muy apreciados en jardines y
+                        aviarios.
+                    </p>
+                    {% if username %}
+                    <a href="/login" class="button">
+                        UWU <i class="ri-arrow-right-line"></i>
+                    </a>
+                    {% else %}
+                    <a href="/login" class="button">
+                        Login <i class="ri-arrow-right-line"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!--==================== ABOUT ====================-->
+        <!--==================== DATOS Y CARACTERISTICAS ====================-->
+        <section class="about section" id="about">
+            <div class="about__container container grid">
+                <div class="about__data">
+                    <h2 class="section__title">
+                        DATOS Y <br> CARACTERISTICAS <br> <i class="ri-earth-line"></i>
+                    </h2>
+
+                    <h3 class="home__subtitle">Tamaño y longevidad <i class="ri-hearts-line"></i></h3>
+                    <p class="about__description">
+                        El pavo real macho puede llegar a medir hasta 2.3 metros de longitud cuando extiende su cola (o
+                        "tren") en su totalidad, mientras que las hembras, conocidas como pavas, son de menor tamaño y
+                        menos coloridas. Estas aves pesan entre 3 y 5 kg en promedio.
+                    </p>
+
+                    <h3 class="home__subtitle">Alimentación <i class="ri-restaurant-line"></i></h3>
+                    <p class="about__description">
+                        Los pavos reales son omnívoros. Su dieta incluye granos, insectos, frutas y vegetales.
+                        Asegurarles una alimentación variada es esencial para su salud, y en cautiverio es común
+                        complementar con pellets especiales para aves de corral.
+                    </p>
+
+                    <h3 class="home__subtitle">Entorno ideal <i class="ri-home-heart-line"></i></h3>
+                    <p class="about__description">
+                        Aunque pueden adaptarse a climas diversos, necesitan un espacio amplio para moverse y extender
+                        sus plumas. Requieren un refugio para protegerse del clima extremo y depredadores, ya que,
+                        aunque son resistentes, son sensibles a bajas temperaturas y a ambientes sin enriquecimiento
+                        natural.
+                    </p>
+
+                    <h3 class="home__subtitle">Dato interesante <i class="ri-temp-cold-line"></i></h3>
+                    <p class="about__description">
+                        La especie más conocida es el pavo real azul (Pavo cristatus), originario de la India. Existen
+                        otras variantes, como el pavo real verde y el pavo real blanco, aunque este último no es una
+                        especie diferente, sino una variación genética que lo hace completamente blanco.
+                    </p>
+
+                    {% if username %}
+                    <a href="/login" class="button">
+                        UWU <i class="ri-arrow-right-line"></i>
+                    </a>
+                    {% else %}
+                    <a href="/login" class="button">
+                        Login <i class="ri-arrow-right-line"></i>
+                    </a>
+                    {% endif %}
+                </div>
+
+                <div class="about__image">
+                    <img src="{{ url_for('static', filename='img/about-beach.jpg') }}" alt="about Image"
+                        class="about__img">
+                    <div class="about__shadow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer">
+            <div class="footer__container container grid">
+                <div class="footer__content grid">
+                    <div>
+                        <a href="#" class="footer__logo">Compromiso con la Normativa Legal <br> y el Bienestar
+                            Animal</a>
+
+                        <p class="footer_description">
+
+                            Como proyecto enmarcado dentro de las Resoluciones 1862 <br>
+                            de 2008 y 10860 de 2017, ExotiPet cumple con todas las <br>
+                            normativas para asegurar la protección y bienestar de las <br>
+                            mascotas exóticas. Nos aseguramos de que cada aspecto de <br>
+                            nuestra plataforma esté alineado con las regulaciones vigentes,<br>
+                            ofreciendo un entorno seguro y confiable para nuestros usuarios.<br>
+                        </p>
+                    </div>
+
+                    <div class="footer__data grid">
+                        <div>
+                            <h3 class="footer__title">About</h3>
+
+                            <ul class="footer__links">
+                                <li>
+                                    <a href="#" class="footer__link">About Us</a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="footer__link">Features</a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="footer__link">News & Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="footer__title">Compnay</h3>
+
+                            <ul class="footer__links">
+                                <li>
+                                    <a href="#" class="footer__link">FAQs</a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="footer__link">History</a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="footer__link">Testimonials</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="footer__title">Contact</h3>
+
+                            <ul class="footer__links">
+                                <li>
+                                    <a href="#" class="footer__link">Call Center</a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="footer__link">Support Center</a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="footer__link">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="footer__title">Support</h3>
+
+                            <ul class="footer__links">
+                                <li>
+                                    <a href="#" class="footer__link">Privacy Policy</a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="footer__link">Terms & Conditions</a>
+                                </li>
+
+                                <li>
+                                    <a href="#" class="footer__link">Payments</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__group">
+                    <div class="footer__social">
+                        <a href="#" target="_blank" class="footer__social-link">
+                            <i class="ri-facebook-line"></i>
+                        </a>
+                        <a href="#" target="_blank" class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" target="_blank" class="footer__social-link">
+                            <i class="ri-twitter-line"></i>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=cgV2tN8gxCg&ab_channel=Bedimcode" target="_blank"
+                            class="footer__social-link">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </div>
+                    <span class="footer__copy">
+                        &#169; Brad ;) - 💙
+                    </span>
+                </div>
+
+            </div>
+        </footer>
+
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line"></i>
+        </a>
+
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="{{ url_for('static', filename='js/scrollreveal.min.js') }}"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
